@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: 255 255 255;   /* fondo principal blanco */
+  --color-box: 255 255 255;  /* cajas también blancas */
+  --box-border: 229 231 235; /* color del borde gris */
+  --box-sd: 226 232 240 / 0.5; /* sombra con opacidad */
+  --heading-1: 23 37 84;     /* color títulos grandes */
+  --heading-2: 31 41 55;     /* color títulos medianos */
+  --heading-3: 55 65 81;     /* color títulos pequeños */
+}
+
+html.dark {
+  --color-bg: 3 7 18;        /* fondo muy oscuro */
+  --color-box: 17 24 39;     /* cajas gris oscuro */
+  --box-border: 243 244 246 / 0.1; /* borde casi invisible */
+  --box-sd: transparent;     /* sin sombra */
+  --heading-1: 255 255 255;  /* títulos blancos */
+  --heading-2: 243 244 246;  /* títulos gris claro */
+  --heading-3: 209 213 219;  /* títulos gris medio */
+}
+
+/* ==========================================================
+   Definición de utilidades personalizadas con Tailwind
+   ========================================================== */
+@layer utilities {
+
+  /* Fondo principal del body.
+     Usa la variable --color-bg (que cambia según el tema). */
+  .bg-body {
+    background-color: rgb(var(--color-bg));
+  }
+
+  /* Fondo de las "cajas" o contenedores.
+     Usa la variable --color-box. */
+  .bg-box-bg {
+    background-color: rgb(var(--color-box));
+  }
+
+  /* Colores de texto personalizados para distintos niveles
+     de títulos o encabezados, usando variables de tema. */
+  .text-heading-1 {
+    color: rgb(var(--heading-1));
+  }
+
+  .text-heading-2 {
+    color: rgb(var(--heading-2));
+  }
+
+  .text-heading-3 {
+    color: rgb(var(--heading-3));
+  }
+}
+
+/* ==========================================================
+   Configuración global de la página
+   ========================================================== */
+
+/* Habilita desplazamiento suave en los enlaces internos
+   (ej: <a href="#seccion">). */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Define la tipografía global del sitio.
+   Asegúrate de importar la fuente Raleway desde Google Fonts
+   u otro proveedor. */
+body {
+  font-family: "Raleway", sans-serif;
+}
