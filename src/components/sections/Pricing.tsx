@@ -36,7 +36,7 @@ export const Pricing = () => {
             {/* Encabezado */}
             <Container className="text-center">
                 <Title>Colecciones</Title>
-                <Paragraph className="mt-4">
+                <Paragraph className="mt-4" children={undefined}>
                     
                 </Paragraph>
             </Container>
